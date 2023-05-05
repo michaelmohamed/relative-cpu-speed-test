@@ -1,4 +1,5 @@
-function testRelativeSpeed(testSeed, testMs) {
+function testRelativeSpeed(options) {
+  const { testSeed, testMs } = options;
   return new Promise((resolve, reject) => {
     const start = performance.now();
     let result = 0;
@@ -9,6 +10,6 @@ function testRelativeSpeed(testSeed, testMs) {
     const timeMs = Math.round(end - start);
     const passed = timeMs <= testMs;
     console.log(`The CPU Speed is ${timeMs} milliseconds.`)
-    passed ? resolve([testSeed, timeMs]) : reject([testSeed, timeMs]);
+    passed ? resolve({testSeed, timeMs}) : reject({testSeed, timeMs});
   });
 }
