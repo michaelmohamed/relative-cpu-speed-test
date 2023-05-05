@@ -3,6 +3,8 @@
 ## Description
 An async script that can be used to test CPU speed from a browser without blocking.
 
+The testRelativeSpeed function is used to test the relative speed of a CPU by performing a calculation and measuring how long it takes to complete, and then comparing it to a specified time limit.
+
 ## Usage
 ```js
 try {
